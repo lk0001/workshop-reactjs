@@ -4,11 +4,13 @@ ListGroup = require('react-bootstrap').ListGroup
 Story = require('./story.cjsx')
 
 module.exports = React.createClass(
+  apiUrl: 'https://fierce-gorge-1132.herokuapp.com'
+
   getInitialState: ->
     {stories: []}
 
   componentDidMount: ->
-    $.get(@props.src, (result) =>
+    $.get(@path(), (result) =>
       @setState(stories: result)
     )
 
@@ -18,4 +20,7 @@ module.exports = React.createClass(
         <Story {...story} key={story.id} />
       }
     </ListGroup>
+
+  path: ->
+    "#{@apiUrl}#{@props.path}"
 )
