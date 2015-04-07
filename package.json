@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lk0001/workshop-reactjs/issues"
   },
-  "homepage": "https://github.com/lk0001/workshop-reactjs"
+  "homepage": "https://github.com/lk0001/workshop-reactjs",
+  "devDependencies": {
+    "http-server": "^0.8.0"
+  }
 }
