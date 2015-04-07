@@ -1,4 +1,6 @@
 React = require('react')
+window.jQuery = require('jquery')
+window.$ = window.jQuery
 Stories = require('./stories.cjsx')
 
 App = React.createClass(

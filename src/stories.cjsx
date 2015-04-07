@@ -1,5 +1,6 @@
 React = require('react')
-window.$ = require('jquery')
+require('bootstrap')
+ListGroup = require('react-bootstrap').ListGroup
 Story = require('./story.cjsx')
 
 module.exports = React.createClass(
@@ -12,9 +13,9 @@ module.exports = React.createClass(
     )
 
   render: ->
-    <div>
+    <ListGroup>
       {@state.stories.map (story) ->
         <Story {...story} key={story.id} />
       }
-    </div>
+    </ListGroup>
 )
