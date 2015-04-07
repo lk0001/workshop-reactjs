@@ -4,6 +4,7 @@ React = require('react')
 Router = require('react-router')
 DefaultRoute = Router.DefaultRoute
 Route = Router.Route
+Redirect = Router.Redirect
 RouteHandler = Router.RouteHandler
 Header = require('./header.cjsx')
 PopularStories = require('./popular_stories.cjsx')
@@ -19,7 +20,8 @@ App = React.createClass(
 
 routes =
   <Route handler={App} path='/'>
-    <DefaultRoute name='popular' handler={PopularStories} />
+    <Redirect from='/' to='popular' />
+    <Route name='popular' handler={PopularStories} path='popular' />
     <Route name='recent' handler={RecentStories} path='recent' />
   </Route>
 
