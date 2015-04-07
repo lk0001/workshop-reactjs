@@ -7,11 +7,11 @@ App = React.createClass(
       Hello world!
 
       Stories:
-      <Stories />
+      <Stories src="#{@props.apiPath}/stories" />
     </div>
 )
 
 React.render(
-  <App />,
+  <App apiPath='https://fierce-gorge-1132.herokuapp.com' />,
   document.getElementById('main')
 )

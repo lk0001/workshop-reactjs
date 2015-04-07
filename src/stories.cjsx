@@ -7,14 +7,14 @@ module.exports = React.createClass(
     {stories: []}
 
   componentDidMount: ->
-    $.get('/stories', (result) =>
+    $.get(@props.src, (result) =>
       @setState(stories: result)
     )
 
   render: ->
     <div>
       {@state.stories.map (story) ->
-        <Story title={story.title} body={story.body} key={story.id} />
+        <Story {...story} key={story.id} />
       }
     </div>
 )
