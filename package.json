@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/app.cjsx",
   "scripts": {
+    "postinstall": "browserify . -o dist/app.js --verbose --debug --extension .cjsx",
     "start": "http-server dist --silent",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npm start & watchify ./src/* -o dist/app.js --verbose --debug --extension .cjsx"
